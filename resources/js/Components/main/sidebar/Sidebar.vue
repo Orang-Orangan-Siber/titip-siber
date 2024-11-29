@@ -132,46 +132,6 @@ import {
                                             <span>Settings</span>
                                             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            <Keyboard class="mr-2 h-4 w-4" />
-                                            <span>Keyboard shortcuts</span>
-                                            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                    </DropdownMenuGroup>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuGroup>
-                                        <DropdownMenuItem>
-                                        <Users class="mr-2 h-4 w-4" />
-                                        <span>Team</span>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuSub>
-                                        <DropdownMenuSubTrigger>
-                                            <UserPlus class="mr-2 h-4 w-4" />
-                                            <span>Invite users</span>
-                                        </DropdownMenuSubTrigger>
-                                        <DropdownMenuPortal>
-                                            <DropdownMenuSubContent>
-                                            <DropdownMenuItem>
-                                                <Mail class="mr-2 h-4 w-4" />
-                                                <span>Email</span>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem>
-                                                <MessageSquare class="mr-2 h-4 w-4" />
-                                                <span>Message</span>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuSeparator />
-                                            <DropdownMenuItem>
-                                                <PlusCircle class="mr-2 h-4 w-4" />
-                                                <span>More...</span>
-                                            </DropdownMenuItem>
-                                            </DropdownMenuSubContent>
-                                        </DropdownMenuPortal>
-                                        </DropdownMenuSub>
-                                        <DropdownMenuItem>
-                                        <Plus class="mr-2 h-4 w-4" />
-                                        <span>New Team</span>
-                                        <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
                                     </DropdownMenuGroup>
                                     <DropdownMenuSeparator />
                                     <DropdownMenuItem>
@@ -199,8 +159,10 @@ import {
 
                     </div>
                 </nav>
-
-                <slot/>
+                
+                <div class="px-5">
+                    <slot/>
+                </div>
 
             </div>
 
