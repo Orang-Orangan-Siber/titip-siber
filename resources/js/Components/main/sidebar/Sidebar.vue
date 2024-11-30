@@ -2,7 +2,7 @@
 
 import Button from '@/Components/ui/button/Button.vue'
 import Input from '@/Components/ui/input/Input.vue'
-import { Search } from 'lucide-vue-next'
+import { Search, LayoutGrid, ShoppingCart, ShoppingBag, ScrollText, Store, User } from 'lucide-vue-next'
 
 import {
   DropdownMenu,
@@ -30,7 +30,6 @@ import {
   Plus,
   PlusCircle,
   Settings,
-  User,
   UserPlus,
   Users,
 } from 'lucide-vue-next'
@@ -51,32 +50,25 @@ import {
 
     <nav>
         <div class="flex">
-            <div class="sidebar bg-slate-100 h-[100vh] w-[90px] fixed left-0 top-0 bottom-0">
-                <div class="navbar-brand text-center mt-5">
-                    <h1 class="text-[30px] font-bold text-blue-500">T<span class="text-orange-500">S</span></h1>
+            <div class="sidebar bg-slate-100 h-[100vh] w-[90px] fixed left-0 top-0 bottom-0 lg:block hidden">
+                <div class="navbar-brand flex justify-center mt-5">
+                    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/89033712/391241159-1deed505-b96b-4d8f-bed8-5de918202b41.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241130T135916Z&X-Amz-Expires=300&X-Amz-Signature=8b5156bcc6619e32eb736d829f21a236a938c05b2f9eb2f5370ddbbc9e5ae6c5&X-Amz-SignedHeaders=host" alt="logo" width="55px">
+                    <!-- <h1 class="text-[30px] font-bold text-blue-500">T<span class="text-orange-500">S</span></h1> -->
                 </div>
                 <div class="menu mt-20">
                     <div class="flex justify-center">
                         <div class="">
                             <a href="" class="nav-link my-5 block p-3 bg-blue-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
-                                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
-                                </svg>
+                                <LayoutGrid :stroke-width="2"/>
                             </a>
                             <a href="" class="nav-link my-5 block p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                                </svg>
+                                <ShoppingBag :stroke-width="1"/>
                             </a>
                             <a href="" class="nav-link my-5 block p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
-                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
-                                </svg>
+                                <ScrollText :stroke-width="1"/>
                             </a>
                             <a href="" class="nav-link my-5 block p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07"/>
-                                </svg>
+                                <Store :stroke-width="1"/>
                             </a>
 
                         </div>
@@ -84,15 +76,44 @@ import {
                 </div>
             </div>
 
-            <div class="ms-[90px] w-full">
-
-                <nav class="">
-                    <div class="flex items-center p-3 mx-8 justify-between">
-                        <div class="navbar-brand">
-                            <h1 class="text-[24px] font-semibold">Titip Siber</h1>
+            <div class="bottom_bar lg:hidden block fixed bottom-0 right-0 left-0 z-[99]">
+                <div class="w-full bg-white h-[65px] border-t">
+                    <div class="flex items-center h-full justify-between mx-5">
+                        <div class="flex items-center justify-around w-full">
+                            <a href=""class="">
+                                <ShoppingBag :stroke-width="1"/>
+                            </a>
+                            <a href="" class="">
+                                <ScrollText :stroke-width="1"/>
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="" class="block bg-blue-500 p-4 rounded-full relative top-[-20px]">
+                                <LayoutGrid class="text-white"/>
+                            </a>
+                        </div>
+                        <div class="flex items-center justify-around w-full">
+                            <a href="" class="">
+                                <ShoppingCart :stroke-width="1"/>
+                            </a>
+                            <a href="" class="">
+                                <User :stroke-width="1"/>
+                            </a>
                         </div>
 
-                        <div class="mx-5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:ms-[90px] ms-auto w-full mb-10">
+
+                <nav class="">
+                    <div class="flex items-center p-3 lg:mx-8 mx-3 justify-between">
+                        <a href="" class="navbar-brand">
+                            <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/89033712/391241521-fc2d884d-78ec-4ac2-9e2f-df9918716402.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241130T140629Z&X-Amz-Expires=300&X-Amz-Signature=c61060101f79d48e23745843202d6951ee03061296b20e5b4a379515dd7b55ca&X-Amz-SignedHeaders=host" alt="logo full" width="150px">
+                        </a>
+
+                        <div class="mx-5 lg:block hidden">
                             <div class="relative w-full max-w-sm items-center">
                                 <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px]" />
                                 <span class="absolute start-0 inset-y-0 flex items-center justify-center px-3">
@@ -103,8 +124,8 @@ import {
 
                       
                         <div class="flex items-center gap-7">
-                            <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-diamond-plus"><path d="M12 8v8"/><path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z"/><path d="M8 12h8"/></svg>
+                            <div class="lg:hidden block">
+                                <Search class="size-5" />
                             </div>
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>

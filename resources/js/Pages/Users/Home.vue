@@ -3,6 +3,7 @@
 // import Navbar from "@/Components/main/navbar/Navbar.vue"
 import { History } from 'lucide-vue-next';
 import MarketIcon from '@/Components/icons/Market.vue'
+import StarIcon from '@/Components/icons/Star.vue'
 
 import Sidebar from "@/Components/main/sidebar/Sidebar.vue"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
@@ -13,27 +14,43 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 
 <Sidebar> 
     <section>
-        <div class="mt-[40px] grid grid-cols-[8fr,4fr] gap-5 ">
+        <div class="mt-[40px] grid lg:grid-cols-[8fr,4fr] grid-cols-1 gap-5 ">
             <div class="w-full">
                 <div class=" h-[220px] rounded-xl bg-blue-500 w-full"></div>
                 <div class="mt-[20px]">
                     <h1 class="font-semibold">Kategori Pilihan</h1>
                     <div class="flex items-center mt-2 gap-3">
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
-                        <div class="bg-blue-500 w-[90px] h-[90px] rounded-lg"></div>
+                        <a href="" class="text-center">
+                            <div class="border w-[90px] h-[90px] rounded-lg flex items-center justify-center">
+                                <img src="https://www.static-src.com/siva/asset/11_2023/new-all-promo_4x.png?w=110" alt="category img" width="45px">
+                            </div>
+                            <p class="text-xs tracking-wide mt-2">Makanan</p>
+                        </a>
+                        <a href="" class="text-center">
+                            <div class="border w-[90px] h-[90px] rounded-lg flex items-center justify-center">
+                                <img src="https://www.static-src.com/siva/asset/10_2023/Widget-Belanja-ibuAnak.png?w=110" alt="category img" width="45px">
+                            </div>
+                            <p class="text-xs tracking-wide mt-2">Minuman</p>
+                        </a>
+                        <a href="" class="text-center">
+                            <div class="border w-[90px] h-[90px] rounded-lg flex items-center justify-center">
+                                <img src="https://www.static-src.com/siva/asset/10_2023/Widget-Layanan-tradein.png?w=110" alt="category img" width="45px">
+                            </div>
+                            <p class="text-xs tracking-wide mt-2">Jasa Titip</p>
+                        </a>
+
                     </div>
-                    <div class="grid grid-cols-3 mt-10 gap-3">
-                        <a href="" class="" v-for="i in 10">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s" alt="food img" loading="lazy" class="w-full h-[140px] object-cover rounded-md">
-                            <div class="mt-2">
-                                <h1 class="font-bold text-[15px] leading-5 line-clamp-2 mb-2">Sate Padang Enak Mantap panjang dan sedap banget cuuuuyy</h1>
-                                <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum unde placeat qui.</p>
+                    <div class="grid grid-cols-3 mt-10 gap-x-3 gap-y-6">
+                        <a href="" class="border border-transparent hover:border-slate-300 rounded-lg" v-for="i in 9">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s" alt="food img" loading="lazy" class="w-full h-[140px] object-cover rounded-t-md">
+                            <div class="mt-1 p-2">
+                                <p class="text-xs font-normal flex items-center w-max gap-1 text-slate-600 mb-[3px]">
+                                    iShowSheep Store
+                                </p>
+                                <h1 class="font-semibold text-[15px] leading-5 line-clamp-2 mb-1">Sate Padang Enak Mantap panjang dan sedap banget cuuuuyy</h1>
+                                <p class="text-[11px] line-clamp-1">Lorem ipsum dolor sit amet cons awdaw dawdawdectetur adipisicing elit. Harum unde placeat qui.</p>
+                                <p class="text-[15px] font-medium mt-2">Rp. 140.000</p>
+                                <p class="text-[11px] line-clamp-1 mt-1 flex items-center gap-1"><StarIcon/> 4.6 <span class="w-[2px] h-[2px] bg-slate-600 rounded-full"></span> Terjual 13</p>
                             </div>
                         </a>
                     </div>
