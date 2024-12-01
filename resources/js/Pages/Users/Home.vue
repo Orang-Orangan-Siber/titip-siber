@@ -18,7 +18,7 @@ import { Link } from '@inertiajs/vue3';
     <section>
         <div class="mt-[30px] grid md:grid-cols-10 grid-cols-1 gap-5 items-start px-5 md:px-0">
             <div class="w-full md:col-span-8 md:col-start-2">
-                <div class=" h-[220px] rounded-xl bg-blue-500 w-full"></div>
+                <div class=" h-[290px] rounded-xl bg-blue-500 w-full"></div>
                 <div class="mt-[20px]">
                     <h1 class="font-semibold">Kategori Pilihan</h1>
                     <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 items-center mt-2 gap-3">
@@ -45,13 +45,13 @@ import { Link } from '@inertiajs/vue3';
                         </a>
 
                     </div>
-                    <div class="grid lg:grid-cols-4 grid-cols-2 mt-10 gap-x-3 gap-y-6">
-                        <Link href="/merchant/abc" class="border p-3 rounded-2xl hover:md:border-transparent hover:md:shadow-lg transition-[250ms]" v-for="i in 9">
+                    <div class="grid lg:grid-cols-4 grid-cols-2 mt-10 gap-x-3 gap-y-6 mb-6">
+                        <Link href="/merchant/abc" class="border p-3 rounded-2xl hover:md:border-transparent hover:md:shadow-lg transition-[250ms]" v-for="i in 8">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s"
                                 alt="food img" loading="lazy" class="w-full h-[228px] object-cover rounded-xl">
                             <div class="mt-1 p-2">
-                                <h1 class="font-semibold text-base leading-5 line-clamp-2 mt-2">Warung Mantap</h1>
-                                <p class="text-sm mt-3 font-light line-clamp-1">Sate, Makanan, Minuman</p>
+                                <h1 class="font-medium text-slate-700 text-base leading-5 line-clamp-2 mt-2">Warung kedia pak cik mail keren</h1>
+                                <p class="text-[12px] mt-1 font-light line-clamp-1">Sate, Makanan, Minuman</p>
                                 <p class="text-[15px] font-medium mt-4">Rp. 10.000 - Rp. 15.000</p>
                                 <!-- <p class="text-[11px] line-clamp-1 mt-1 flex items-center gap-1">
                                     <StarIcon /> 4.6 <span class="w-[2px] h-[2px] bg-slate-600 rounded-full"></span>
