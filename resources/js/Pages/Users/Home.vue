@@ -7,6 +7,7 @@ import StarIcon from '@/Components/icons/Star.vue'
 import Button from "@/Components/ui/button/Button.vue"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 import Navbar from '@/Components/main/navbar/Navbar.vue';
+import { Link } from '@inertiajs/vue3';
 
 </script>
 
@@ -45,7 +46,7 @@ import Navbar from '@/Components/main/navbar/Navbar.vue';
 
                     </div>
                     <div class="grid lg:grid-cols-4 grid-cols-2 mt-10 gap-x-3 gap-y-6">
-                        <a href="" class="border p-3 rounded-2xl hover:md:border-transparent hover:md:shadow-lg transition-[250ms]" v-for="i in 9">
+                        <Link href="/merchant/abc" class="border p-3 rounded-2xl hover:md:border-transparent hover:md:shadow-lg transition-[250ms]" v-for="i in 9">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s"
                                 alt="food img" loading="lazy" class="w-full h-[228px] object-cover rounded-xl">
                             <div class="mt-1 p-2">
@@ -57,7 +58,7 @@ import Navbar from '@/Components/main/navbar/Navbar.vue';
                                     Terjual 13
                                 </p> -->
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
