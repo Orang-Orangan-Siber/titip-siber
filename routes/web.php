@@ -7,7 +7,8 @@ use Inertia\Inertia;
 
 
 // AUTHENTICATION 
-Route::get('/auth/login', [AuthController::class, 'loginView']);
+Route::get('/auth/login', [AuthController::class, 'loginView'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'login']);
 Route::get('/auth/register', [AuthController::class, 'registerView']);
 
 

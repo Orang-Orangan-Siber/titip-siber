@@ -39,6 +39,8 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'passwords' => 'users',
+            'nim' => 'nim'
         ],
     ],
 
