@@ -81,7 +81,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                                 <div class="">
                                     <a href="" class="block hover:underline text-xs font-semibold">1 Ayam geprek pedas</a>
                                     <p class="text-[10px] mt-1">15 Jan 2024</p>
-                                    <p class="text-xs mt-1 text-orange-600 font-semibold">Rp. 14.000</p>
+                                    <p class="text-xs mt-1 text-orange-700 font-semibold">Rp. 14.000</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                                 <div class="">
                                     <a href="" class="block hover:underline text-xs font-semibold">1 Ayam geprek pedas</a>
                                     <p class="text-[10px] mt-1">15 Jan 2024</p>
-                                    <p class="text-xs mt-1 text-orange-600 font-semibold">Rp. 14.000</p>
+                                    <p class="text-xs mt-1 text-orange-700 font-semibold">Rp. 14.000</p>
                                 </div>
                             </div>
                         </div>
