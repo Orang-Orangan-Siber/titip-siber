@@ -6,6 +6,7 @@ import MarketIcon from '@/Components/icons/Market.vue'
 import StarIcon from '@/Components/icons/Star.vue'
 
 import Sidebar from "@/Components/main/sidebar/Sidebar.vue"
+import Button from "@/Components/ui/button/Button.vue"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 
 </script>
@@ -14,7 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 
 <Sidebar> 
     <section>
-        <div class="mt-[40px] grid lg:grid-cols-[8fr,4fr] grid-cols-1 gap-5 ">
+        <div class="mt-[30px] grid lg:grid-cols-[8fr,4fr] grid-cols-1 gap-5 ">
             <div class="w-full">
                 <div class=" h-[220px] rounded-xl bg-blue-500 w-full"></div>
                 <div class="mt-[20px]">
@@ -40,12 +41,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                         </a>
 
                     </div>
-                    <div class="grid grid-cols-3 mt-10 gap-x-3 gap-y-6">
+                    <div class="grid lg:grid-cols-3 grid-cols-2 mt-10 gap-x-3 gap-y-6">
                         <a href="" class="border border-transparent hover:border-slate-300 rounded-lg" v-for="i in 9">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s" alt="food img" loading="lazy" class="w-full h-[140px] object-cover rounded-t-md">
                             <div class="mt-1 p-2">
-                                <p class="text-xs font-normal flex items-center w-max gap-1 text-slate-600 mb-[3px]">
-                                    iShowSheep Store
+                                <p class="text-xs font-normal line-clamp-1 text-slate-600 mb-[3px]">
+                                    Elaina Cantik
                                 </p>
                                 <h1 class="font-semibold text-[15px] leading-5 line-clamp-2 mb-1">Sate Padang Enak Mantap panjang dan sedap banget cuuuuyy</h1>
                                 <p class="text-[11px] line-clamp-1">Lorem ipsum dolor sit amet cons awdaw dawdawdectetur adipisicing elit. Harum unde placeat qui.</p>
@@ -66,15 +67,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                             Your Order
                         </TabsTrigger>
                         <TabsTrigger value="password" class="w-full">
-                            History
+                            Unavailable
                         </TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="account" class="h-[330px] overflow-auto">   
+                    <TabsContent value="account" class="h-[300px] overflow-auto">   
 
                         <div class="my-2 border rounded-2xl p-3 bg-white " v-for="i in 6">
                             <p class="text-xs font-medium flex items-center w-max gap-1 text-slate-600 hover:underline">
-                                <MarketIcon/>
                                 iShowSheep Store</p>
                             <div class="flex mt-2 gap-3">
                                 <img src="https://lingkarwilis.com/wp-content/uploads/2024/03/2024-03-14-15_17_52-Window.png" alt="food img" loading="lazy" class="w-[60px] h-[60px] object-cover rounded-lg">
@@ -108,6 +108,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                         </div>
                     </div>
 
+                    <Button class="rounded-full w-full py-5 mt-2">Pesan Sekarang</Button>
                 </Tabs>
             </div>
         </div>

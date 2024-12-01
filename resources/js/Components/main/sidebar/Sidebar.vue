@@ -2,6 +2,7 @@
 
 import Button from '@/Components/ui/button/Button.vue'
 import Input from '@/Components/ui/input/Input.vue'
+import CartMobile from '@/Components/main/mobile/CartMobile.vue'
 import { Search, LayoutGrid, ShoppingCart, ShoppingBag, ScrollText, Store, User } from 'lucide-vue-next'
 
 import {
@@ -48,11 +49,13 @@ import {
 
 <template>
 
+    <CartMobile/>
+
     <nav>
         <div class="flex">
             <div class="sidebar bg-slate-100 h-[100vh] w-[90px] fixed left-0 top-0 bottom-0 lg:block hidden">
                 <div class="navbar-brand flex justify-center mt-5">
-                    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/89033712/391241159-1deed505-b96b-4d8f-bed8-5de918202b41.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241130T135916Z&X-Amz-Expires=300&X-Amz-Signature=8b5156bcc6619e32eb736d829f21a236a938c05b2f9eb2f5370ddbbc9e5ae6c5&X-Amz-SignedHeaders=host" alt="logo" width="55px">
+                    <img src="https://i.ibb.co.com/Lt02dn4/New-Project-58-81-C0720-2.png" alt="logo" width="55px">
                     <!-- <h1 class="text-[30px] font-bold text-blue-500">T<span class="text-orange-500">S</span></h1> -->
                 </div>
                 <div class="menu mt-20">
@@ -80,30 +83,35 @@ import {
                 <div class="w-full bg-white h-[65px] border-t">
                     <div class="flex items-center h-full justify-between mx-5">
                         <div class="flex items-center justify-around w-full">
-                            <a href=""class="">
-                                <ShoppingBag :stroke-width="1"/>
+                            <a href="" class="flex flex-col text-center justify-center">
+                                <ShoppingBag :stroke-width="1" class="w-full"/>
+                                <p class="text-[11px] text-slate-500 mt-[6px]">Jastip</p>
                             </a>
-                            <a href="" class="">
-                                <ScrollText :stroke-width="1"/>
+                            <a href="" class="flex flex-col text-center justify-center">
+                                <ShoppingCart :stroke-width="1" class="w-full"/>
+                                <p class="text-[11px] text-slate-500 mt-[6px]">Keranjang</p>
                             </a>
                         </div>
                         <div class="">
-                            <a href="" class="block bg-blue-500 p-4 rounded-full relative top-[-20px]">
+                            <a href="/" class="block bg-blue-500 p-4 rounded-full relative top-[-20px]">
                                 <LayoutGrid class="text-white"/>
                             </a>
                         </div>
                         <div class="flex items-center justify-around w-full">
-                            <a href="" class="">
-                                <ShoppingCart :stroke-width="1"/>
+                            <a href="" class="flex flex-col text-center justify-center">
+                                <ScrollText :stroke-width="1" class="w-full"/>
+                                <p class="text-[11px] text-slate-500 mt-[6px]">Riwayat</p>
                             </a>
-                            <a href="" class="">
-                                <User :stroke-width="1"/>
+                            <a href="" class="flex flex-col text-center justify-center">
+                                <User :stroke-width="1" class="w-full"/>
+                                <p class="text-[11px] text-slate-500 mt-[6px]">Akun</p>
                             </a>
                         </div>
 
                     </div>
                 </div>
             </div>
+
 
             <div class="lg:ms-[90px] ms-auto w-full mb-10">
 
@@ -141,37 +149,16 @@ import {
                                         <DropdownMenuItem>
                                             <User class="mr-2 h-4 w-4" />
                                             <span>Profile</span>
-                                            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            <CreditCard class="mr-2 h-4 w-4" />
-                                            <span>Billing</span>
-                                            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem>
                                             <Settings class="mr-2 h-4 w-4" />
                                             <span>Settings</span>
-                                            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
                                         </DropdownMenuItem>
                                     </DropdownMenuGroup>
                                     <DropdownMenuSeparator />
                                     <DropdownMenuItem>
-                                        <Github class="mr-2 h-4 w-4" />
-                                        <span>GitHub</span>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <LifeBuoy class="mr-2 h-4 w-4" />
-                                        <span>Support</span>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem disabled>
-                                        <Cloud class="mr-2 h-4 w-4" />
-                                        <span>API</span>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
                                         <LogOut class="mr-2 h-4 w-4" />
                                         <span>Log out</span>
-                                        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
