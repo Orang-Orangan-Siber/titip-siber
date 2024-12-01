@@ -3,7 +3,8 @@
 import Button from '@/Components/ui/button/Button.vue'
 import Input from '@/Components/ui/input/Input.vue'
 import CartMobile from '@/Components/main/mobile/CartMobile.vue'
-import { Search, LayoutGrid, ShoppingCart, ShoppingBag, ScrollText, Store, User } from 'lucide-vue-next'
+import { ref } from 'vue'
+import { Search, LayoutGrid, ShoppingCart, ShoppingBag, ScrollText, Store, User, LogOut, Settings } from 'lucide-vue-next'
 
 import {
   DropdownMenu,
@@ -11,29 +12,16 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu'
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  UserPlus,
-  Users,
-} from 'lucide-vue-next'
+
+
+const showCartContent = ref(false)
+
+const showCartMobile = () => {
+    showCartContent.value = true
+}
 
 </script>
 
@@ -49,7 +37,7 @@ import {
 
 <template>
 
-    <CartMobile/>
+    <CartMobile v-model:isVisible="showCartContent" />
 
     <nav>
         <div class="flex">
@@ -87,10 +75,10 @@ import {
                                 <ShoppingBag :stroke-width="1" class="w-full"/>
                                 <p class="text-[11px] text-slate-500 mt-[6px]">Jastip</p>
                             </a>
-                            <a href="" class="flex flex-col text-center justify-center">
+                            <button @click="showCartMobile" class="flex flex-col text-center justify-center">
                                 <ShoppingCart :stroke-width="1" class="w-full"/>
                                 <p class="text-[11px] text-slate-500 mt-[6px]">Keranjang</p>
-                            </a>
+                            </button>
                         </div>
                         <div class="">
                             <a href="/" class="block bg-blue-500 p-4 rounded-full relative top-[-20px]">
@@ -118,7 +106,7 @@ import {
                 <nav class="">
                     <div class="flex items-center p-3 lg:mx-8 mx-3 justify-between">
                         <a href="" class="navbar-brand">
-                            <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/89033712/391241521-fc2d884d-78ec-4ac2-9e2f-df9918716402.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20241130%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241130T140629Z&X-Amz-Expires=300&X-Amz-Signature=c61060101f79d48e23745843202d6951ee03061296b20e5b4a379515dd7b55ca&X-Amz-SignedHeaders=host" alt="logo full" width="150px">
+                            <img src="https://i.ibb.co.com/2jsxLq0/New-Project-58-Copy-4-EF890-A-1.png" alt="logo full" width="150px">
                         </a>
 
                         <div class="mx-5 lg:block hidden">

@@ -59,7 +59,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 
 
             </div>
-            <div class="w-full border-l ps-5 sticky h-[560px] top-[10px]">
+            <div class="w-full border-l ps-5 sticky h-[560px] top-[10px] lg:block hidden">
                 <h1 class="font-semibold flex items-center gap-2"><History class="size-5" /> Order Detail</h1>
                 <Tabs default-value="account" class="w-full mt-3">
                     <TabsList class="w-full">
@@ -81,7 +81,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                                 <div class="">
                                     <a href="" class="block hover:underline text-xs font-semibold">1 Ayam geprek pedas</a>
                                     <p class="text-[10px] mt-1">15 Jan 2024</p>
-                                    <p class="text-xs mt-1 text-blue-500 font-semibold">Rp. 14.000</p>
+                                    <p class="text-xs mt-1 text-orange-600 font-semibold">Rp. 14.000</p>
                                 </div>
                             </div>
                         </div>
