@@ -31,7 +31,6 @@ const showDetailOrder = () => {
 };
 
 
-// Emit event ke parent
 const emit = defineEmits(["update:isVisible"]);
 
 const closeMenu = () => {
@@ -41,10 +40,6 @@ const closeMenu = () => {
 </script>
 
 <style scope>
-
-/* body {
-    overflow: hidden;
-} */ 
 
 .body::-webkit-scrollbar {
     display: none;

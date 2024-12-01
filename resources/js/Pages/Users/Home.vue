@@ -71,7 +71,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
                         </TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="account" class="h-[300px] overflow-auto">   
+                    <TabsContent value="account" class="max-h-[300px] overflow-auto">   
 
                         <div class="my-2 border rounded-2xl p-3 bg-white " v-for="i in 6">
                             <p class="text-xs font-medium flex items-center w-max gap-1 text-slate-600 hover:underline">
@@ -88,8 +88,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
             
 
                     </TabsContent>
-                    <TabsContent value="password">
-                        Change your password here.
+                    <TabsContent value="password" class="max-h-[300px] overflow-auto">
+                        <div class="my-2 border rounded-2xl p-3 bg-white " v-for="i in 2">
+                            <p class="text-xs font-medium flex items-center w-max gap-1 text-slate-600 hover:underline">
+                                iShowSheep Store</p>
+                            <div class="flex mt-2 gap-3">
+                                <img src="https://lingkarwilis.com/wp-content/uploads/2024/03/2024-03-14-15_17_52-Window.png" alt="food img" loading="lazy" class="w-[60px] h-[60px] object-cover rounded-lg">
+                                <div class="">
+                                    <a href="" class="block hover:underline text-xs font-semibold">1 Ayam geprek pedas</a>
+                                    <p class="text-[10px] mt-1">15 Jan 2024</p>
+                                    <p class="text-xs mt-1 text-orange-600 font-semibold">Rp. 14.000</p>
+                                </div>
+                            </div>
+                        </div>
                     </TabsContent>
 
                     <div class="my-2 border rounded-2xl px-3 py-2">
