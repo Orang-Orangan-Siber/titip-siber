@@ -26,7 +26,7 @@ import { Link } from '@inertiajs/vue3';
 
             <div class="mx-5 lg:block hidden">
                 <div class="relative w-full max-w-sm items-center">
-                    <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px]" />
+                    <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px] rounded-full" />
                     <span class="absolute start-0 inset-y-0 flex items-center justify-center px-3">
                         <Search class="size-4 text-muted-foreground" />
                     </span>

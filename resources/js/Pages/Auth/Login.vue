@@ -21,7 +21,7 @@ console.log(form.errors)
 </script>
 
 <template>
-    <!-- <Wrapper> -->
+
         <section>
             <div class="flex justify-center">
                 <div class="lg:w-[550px] w-ful">
@@ -79,5 +79,6 @@ console.log(form.errors)
 
         <div class="fixed w-[70px] h-[70px] bg-orange-500 rounded-full right-[40px] bottom-[40px]"></div>
       
-    <!-- </Wrapper> -->
+
 </template>
+

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" href="https://i.ibb.co.com/Lt02dn4/New-Project-58-81-C0720-2.png" type="image/x-icon">
 
     {{-- Inter Font  --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

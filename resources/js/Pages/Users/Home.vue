@@ -103,6 +103,7 @@ import { Link } from '@inertiajs/vue3';
             </div>
         </div>
 
+
         <div class="w-full bg-blue-50 h-[270px] mt-16"></div>
 
     </section>
