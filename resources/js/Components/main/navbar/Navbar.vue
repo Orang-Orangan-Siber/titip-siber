@@ -15,16 +15,23 @@ import {
     DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu'
 import { Link } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 
 
-
+// OPEN SEARCH PAGE 
 const showSearch = ref(false)
-
 const showSearchMobile = () => {
     showSearch.value = true
 }
+
+
+
+const query = ref("")
+onMounted(() => {
+  const params = new URLSearchParams(window.location.search);
+  query.value = params.get("q") || "";
+});
 
 </script>
 
@@ -38,7 +45,7 @@ const showSearchMobile = () => {
             <div class="mx-5 lg:block hidden">
                 <div class="relative w-full max-w-sm items-center">
                     <form action="/search" class="header">
-                        <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px] rounded-full" />
+                        <Input name="q" v-model="query" id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px] rounded-full" />
                     </form>
                     <span class="absolute start-0 inset-y-0 flex items-center justify-center px-3">
                         <Search class="size-4 text-muted-foreground" />

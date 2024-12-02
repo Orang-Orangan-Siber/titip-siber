@@ -16,3 +16,5 @@ Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/merchant/{slug}', [MerchantController::class, 'merchant']);
+
+Route::get('/search', [HomeController::class, 'search']);

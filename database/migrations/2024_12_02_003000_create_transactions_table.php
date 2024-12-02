@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('merchant_id');
             $table->foreign('merchant_id')->references('id')->on('merchants')->onDelete('cascade');
             $table->bigInteger('total');
-            $table->enum('status', [1, 2, 3, 4])->default('belum dibayar');
+            $table->enum('status', [1, 2, 3, 4])->default(1);
             $table->text('note')->nullable();
             $table->timestamps();
         });

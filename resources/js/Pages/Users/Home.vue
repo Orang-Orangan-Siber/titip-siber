@@ -63,7 +63,7 @@ import { Link } from '@inertiajs/vue3';
                                     <p class="lg:text-[15px] text-[13px] font-medium mt-1">Rp. 10.000</p>
                                     
                                     <p class="text-[11px] line-clamp-1 mt-1 flex items-center gap-1">
-                                        <StarIcon /> 4.6 <span class="w-[2px] h-[2px] bg-slate-600 rounded-full"></span>
+                                        <StarIcon />
                                         Terjual 13
                                     </p>
                                 </div>
@@ -92,7 +92,7 @@ import { Link } from '@inertiajs/vue3';
                                 <p class="lg:text-[15px] text-[13px] font-medium mt-1">Rp. 10.000</p>
                                 
                                 <p class="text-[11px] line-clamp-1 mt-1 flex items-center gap-1">
-                                    <StarIcon /> 4.6 <span class="w-[2px] h-[2px] bg-slate-600 rounded-full"></span>
+                                    <StarIcon />
                                     Terjual 13
                                 </p>
                             </div>
