@@ -53,7 +53,7 @@ console.log(form.errors)
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="text-slate-600 text-sm tracking-wide">Password</label>
-                                    <input type="password" name="" placeholder="✡✡✡✡✡✡" id="password" v-model="form.password"
+                                    <input type="password" name="" placeholder="******" id="password" v-model="form.password"
                                         class="mt-1 focus:ring-1 focus:ring-blue-400 focus:outline-none w-full text-slate-600 border border-slate-300 focus:border-blue-400 rounded-lg p-3">
                                     <p v-if="form.hasErrors" class="text-sm mt-1 text-red-500">
                                         {{ form.errors.password }}

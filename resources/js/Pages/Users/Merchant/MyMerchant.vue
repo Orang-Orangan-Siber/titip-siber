@@ -45,7 +45,8 @@ const props = defineProps({
                                 <div class="w-full h-[2px] bg-blue-500"></div>
                             </div>
                         </div>
-                        <!-- <div class="grid lg:grid-cols-3 grid-cols-2 lg:gap-x-5 gap-x-3 gap-y-6 mt-8">
+
+                        <div class="grid lg:grid-cols-3 grid-cols-2 lg:gap-x-5 gap-x-3 gap-y-6 mt-8">
                             <Link href="/merchant/abc" class="border rounded-2xl hover:md:border-transparent hover:md:shadow-lg transition-[250ms]" v-for="i in 4">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s"
                                     alt="food img" loading="lazy" class="w-full h-[130px] object-cover rounded-t-xl">
@@ -61,7 +62,7 @@ const props = defineProps({
                                     </p>
                                 </div>
                             </Link>
-                        </div> -->
+                        </div>
 
                         <div class="mt-20 text-center">
                             <div class="flex justify-center">
