@@ -13,15 +13,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu'
+import { Link } from '@inertiajs/vue3';
 
 </script>
 
 <template>
       <nav class="">
         <div class="flex items-center p-3 lg:mx-8 mx-3 justify-between">
-            <a href="" class="navbar-brand">
-                <img src="https://i.ibb.co.com/2jsxLq0/New-Project-58-Copy-4-EF890-A-1.png" alt="logo full" width="150px">
-            </a>
+            <Link href="/" class="navbar-brand">
+                <img src="https://i.ibb.co.com/Lt02dn4/New-Project-58-81-C0720-2.png" alt="logo full" width="45">
+            </Link>
 
             <div class="mx-5 lg:block hidden">
                 <div class="relative w-full max-w-sm items-center">

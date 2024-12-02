@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\Users\HomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,3 +15,4 @@ Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/merchant/{slug}', [MerchantController::class, 'merchant']);

@@ -85,3 +85,7 @@ body {
 .shadow-sm {
   box-shadow: 0 2px 12px 0 rgba(36,50,66,.075) !important;
 }
+
+.shadow-lg{
+  box-shadow: 0 16px 48px rgba(133, 161, 193, .25) !important;
+}
