@@ -10,6 +10,7 @@ use Inertia\Inertia;
 Route::get('/auth/login', [AuthController::class, 'loginView'])->name('login');
 Route::post('/auth/login', [AuthController::class, 'login']);
 Route::get('/auth/register', [AuthController::class, 'registerView']);
+Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 
 Route::get('/', [HomeController::class, 'home']);
