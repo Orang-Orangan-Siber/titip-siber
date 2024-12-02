@@ -26,7 +26,6 @@ const showSearchMobile = () => {
 }
 
 
-
 const query = ref("")
 onMounted(() => {
   const params = new URLSearchParams(window.location.search);
@@ -89,7 +88,7 @@ onMounted(() => {
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <Link href="auth/logout" class="flex items-center">
+                            <Link :href="route('logout')" class="flex items-center">
                             <LogOut class="mr-4 h-4 w-4" />
                             <span>Log out</span></Link>
                         </DropdownMenuItem>
