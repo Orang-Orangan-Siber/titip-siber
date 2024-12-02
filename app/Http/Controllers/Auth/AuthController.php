@@ -43,8 +43,4 @@ class AuthController extends Controller
         return redirect('/auth/login');
 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 871a0a366c097decb8087c0a53453d79fe47fbce
