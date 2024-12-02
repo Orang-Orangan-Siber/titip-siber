@@ -18,5 +18,5 @@ Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/merchant/{slug}', [MerchantController::class, 'merchant']);
 
-
 Route::get('/checkout' ,[TransactionController::class, 'checkout'])->name('checkout');
+Route::get('/search', [HomeController::class, 'search']);
