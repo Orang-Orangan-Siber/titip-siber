@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     public function login(Request $request) {
         $credentials = $request->validate([
-            'nim' => 'required|max:255',
+            'nomorInduk' => 'required|max:255',
             'password' => 'required',
         ]);
 

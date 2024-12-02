@@ -5,7 +5,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/Components/ui/alert'
 import { AlertCircle } from 'lucide-vue-next'
 
 const form = useForm({
-    nim: "",
+    nomorInduk: "",
     password: "",
     remember_me: false,
 });
@@ -24,7 +24,7 @@ console.log(form.errors)
 
         <section>
             <div class="flex justify-center">
-                <div class="lg:w-[550px] w-ful">
+                <div class="lg:w-[550px] w-full">
                     <div class="card-content p-7">
                         <form @submit.prevent="submit">
                             <div class="text-center mb-5">
@@ -44,11 +44,11 @@ console.log(form.errors)
                             </Alert>
                             <div class="mx-14">
                                 <div class="mb-3">
-                                    <label for="nim" class="text-slate-600 text-sm tracking-wide">Nomor Induk</label>
-                                    <input type="text" name="" id="nim" placeholder="Nomor induk" v-model="form.nim"
+                                    <label for="nomorInduk" class="text-slate-600 text-sm tracking-wide">Nomor Induk</label>
+                                    <input type="text" name="" id="nomorInduk" placeholder="Nomor induk" v-model="form.nomorInduk"
                                         class="mt-1 focus:ring-1 focus:ring-indigo-400 focus:outline-none w-full text-slate-600 border border-slate-300 focus:border-indigo-400 rounded-lg p-3">
                                     <p v-if="form.hasErrors" class="text-sm mt-1 text-red-500">
-                                        {{ form.errors.nim }}
+                                        {{ form.errors.nomorInduk }}
                                     </p>
                                 </div>
                                 <div class="mb-3">

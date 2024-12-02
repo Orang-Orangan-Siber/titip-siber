@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Muhammad Fathi Farhat',
-            'nim' => '13240008',
+            'nomorInduk' => '13240008',
             'password' => 'jarwo',
         ]);
     }
