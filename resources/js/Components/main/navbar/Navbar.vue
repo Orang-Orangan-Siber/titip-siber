@@ -1,6 +1,7 @@
 <script setup>
 
 import Input from '@/Components/ui/input/Input.vue'
+import SearchPage from '@/Components/main/mobile/SearchPage.vue'
 
 import { Search, User, LogOut, Settings } from 'lucide-vue-next'
 
@@ -14,6 +15,16 @@ import {
     DropdownMenuTrigger,
 } from '@/Components/ui/dropdown-menu'
 import { Link } from '@inertiajs/vue3';
+import { ref } from 'vue';
+
+
+
+
+const showSearch = ref(false)
+
+const showSearchMobile = () => {
+    showSearch.value = true
+}
 
 </script>
 
@@ -26,8 +37,9 @@ import { Link } from '@inertiajs/vue3';
 
             <div class="mx-5 lg:block hidden">
                 <div class="relative w-full max-w-sm items-center">
-                    <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .."
-                        class="ps-10 bg-slate-50 border-0 w-[500px] rounded-full" />
+                    <form action="/search" class="header">
+                        <Input id="search" type="text" placeholder="Lagi mau pesen apa nih ? .." class="ps-10 bg-slate-50 border-0 w-[500px] rounded-full" />
+                    </form>
                     <span class="absolute start-0 inset-y-0 flex items-center justify-center px-3">
                         <Search class="size-4 text-muted-foreground" />
                     </span>
@@ -36,9 +48,12 @@ import { Link } from '@inertiajs/vue3';
 
 
             <div class="flex items-center gap-7">
-                <div class="lg:hidden block">
+                <button class="lg:hidden block" @click="showSearchMobile" >
                     <Search class="size-5" />
-                </div>
+                </button>
+
+                <SearchPage v-model:isVisible="showSearch" />
+
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

@@ -42,7 +42,7 @@ console.log(form.errors)
                                     {{form.errors.LoginError}}
                                 </AlertDescription>
                             </Alert>
-                            <div class="mx-14">
+                            <div class="lg:mx-14 mx-0">
                                 <div class="mb-3">
                                     <label for="nomorInduk" class="text-slate-600 text-sm tracking-wide">Nomor Induk</label>
                                     <input type="text" name="" id="nomorInduk" placeholder="Nomor induk" v-model="form.nomorInduk"
