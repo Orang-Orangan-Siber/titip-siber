@@ -11,7 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class MerchantController extends Controller
 {
     public function merchant($slug) {
-        return Inertia::render('Users/Merchant/Merchant');
+        $merchant = Merchant::where('slug', $slug)->with('user')->first();
+
+        if($merchant == null){
+            abort(404);
+        }
+
+        return Inertia::render('Users/Merchant/Merchant', ['merchant' => $merchant, 'items' => $merchant->items]);
     }
     
     public function getMyMerchant() {
@@ -43,4 +49,7 @@ class MerchantController extends Controller
         return redirect('/my-merchant');
     }
     
+    public function newItem(Request $request) {
+
+    }
 }

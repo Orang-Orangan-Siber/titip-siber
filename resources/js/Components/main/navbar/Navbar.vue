@@ -83,7 +83,7 @@ onMounted(() => {
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <Link :href="route('my-merchant')" class="flex items-center w-full">
-                                <Store class="mr-2 h-4 w-4" />
+                                <Store class="mr-4 h-4 w-4" />
                                 <span>My Merchant</span></Link>
                             </DropdownMenuItem>
                         </DropdownMenuGroup>

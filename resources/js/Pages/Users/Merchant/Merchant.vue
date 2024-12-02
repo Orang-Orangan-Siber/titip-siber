@@ -23,31 +23,25 @@ import {
 import Textarea from '@/Components/ui/textarea/Textarea.vue';
 import Label from '@/Components/ui/label/Label.vue';
 import { ShoppingBag } from 'lucide-vue-next';
+import { usePage } from '@inertiajs/vue3';
+
+const page = usePage()
+
+const menus = reactive([])
 
 
-const menus = reactive([
-    {
-        id: 1,
-        name: 'Sate',
-        note: '',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s',
-        quantity: 0
-    },
-    {
-        id: 2,
-        name: 'Makanan',
-        note: '',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s',
-        quantity: 0
-    },
-    {
-        id: 3,
-        name: 'Minuman',
-        note: '',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s',
-        quantity: 0
-    }
-])
+page.props.merchant.items.forEach((menu) => {
+    menus.push({
+        id: menu.id,
+        name: menu.name,
+        price: menu.price,
+        description: menu.description,
+        image: menu.image,
+        seller: menu.seller,
+        address: menu.address,
+        quantity: 0,
+    })
+})
 
 const showCard = ref(false)
 const itemTotal = ref(0)
@@ -70,6 +64,8 @@ watch(menus, (newValue, oldValue) => {
         showCard.value = false
     }
 })
+
+console.log(page.props.merchant)
 
 </script>
 
@@ -125,15 +121,12 @@ watch(menus, (newValue, oldValue) => {
                                     <DialogHeader>
                                         <DialogTitle>{{ i.name }}</DialogTitle>
                                         <DialogDescription class="line-clamp-1">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eaque ex
-                                            quod
-                                            iusto tempora neque iste repellat atque sit id temporibus architecto
-                                            laboriosam, nam ipsam illum sapiente dolore nulla unde.
+                                            {{ i.description }}
                                         </DialogDescription>
                                     </DialogHeader>
                                     <div class="grid gap-y-2 pb-2">
 
-                                        <p class="text-base font-medium">Rp. 10.000</p>
+                                        <p class="text-base font-medium">Rp. {{ new Intl.NumberFormat('id-ID').format(i.price) }}</p>
 
                                         <Label class="text-sm mb-0 font-medium mt-4">Catatan (opsional)</Label>
                                         <Textarea v-model="i.note" class="w-full" placeholder="Masukkan catatan" />
@@ -159,7 +152,7 @@ watch(menus, (newValue, oldValue) => {
                             <button class="w-[32px] h-[32px] bg-blue-500 text-white rounded-full"
                                 @click="addToCart(i.id)">+</button>
                         </div>
-                        <div class="font-semibold text-end">Rp. 10.000</div>
+                        <div class="font-semibold text-end">Rp. {{ new Intl.NumberFormat('id-ID').format(i.price * i.quantity) }}</div>
                     </div>
                 </div>
 
@@ -187,7 +180,7 @@ watch(menus, (newValue, oldValue) => {
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbPage>Warung Mantap</BreadcrumbPage>
+                            <BreadcrumbPage>{{ $page.props.merchant.name }}</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
@@ -197,17 +190,17 @@ watch(menus, (newValue, oldValue) => {
                             alt="food img" loading="lazy" class="w-[96px] h-[96px] object-cover rounded-xl">
 
                         <div class="">
-                            <h1 class="font-semibold text-xl line-clamp-2">Warung Mantap</h1>
-                            <p class="text-base mt-2 font-light line-clamp-1">Sate, Makanan, Minuman</p>
+                            <h1 class="font-semibold text-xl line-clamp-2">{{ $page.props.merchant.name }}</h1>
+                            <p class="text-base mt-2 font-light line-clamp-1">Makanan, Minuman</p>
                             <p class="text-[15px] font-medium mt-2">Rp. 10.000 - Rp. 15.000</p>
                         </div>
                     </div>
 
                     <div class="md:ms-auto md:mt-0 mt-4">
                         <div class="md:text-end">Pemilik</div>
-                        <div class="font-semibold">Muhammad Fathi Farhat</div>
+                        <div class="font-semibold">{{ $page.props.merchant.user.name }}</div>
                         <div class="md:text-end mt-2">Max. Order</div>
-                        <div class="md:text-end font-semibold">20:00</div>
+                        <div class="md:text-end font-semibold">{{ $page.props.merchant.operational }}</div>
                     </div>
                 </div>
 
@@ -219,7 +212,7 @@ watch(menus, (newValue, oldValue) => {
                             alt="food img" loading="lazy" class="w-full h-[228px] object-cover rounded-xl">
                         <div class="mt-1 p-2">
                             <h1 class="font-semibold text-base leading-5 line-clamp-2 mt-2">{{ i.name }}</h1>
-                            <p class="text-sm mt-2 font-light line-clamp-1">Sate Padang mantap, enak bgt bangke</p>
+                            <p class="text-sm mt-2 font-light line-clamp-1">{{ i.description }}</p>
                             <Dialog>
                                 <DialogTrigger as-child>
                                     <Button variant="link" class="mx-0 px-0 underline">
@@ -238,29 +231,27 @@ watch(menus, (newValue, oldValue) => {
                                             alt="food img" loading="lazy"
                                             class="w-full h-[228px] object-cover rounded-xl">
                                         <div class="pt-1 p-2">
-                                            <h1 class="font-semibold text-lg line-clamp-2">Sate Padang</h1>
-                                            <p class="text-sm mt-2 font-light">Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Natus, dolores. Quod ipsam reiciendis
-                                                blanditiis corrupti perspiciatis voluptatum molestias ea consequuntur!
-                                                Odit
-                                                esse soluta neque quod cumque porro harum architecto numquam!</p>
+                                            <h1 class="font-semibold text-lg line-clamp-2">{{ i.name }}</h1>
+                                            <p class="text-sm mt-2 font-light">{{ i.description }}</p>
 
                                             <hr class="my-3">
 
                                             <div class="grid grid-cols-3 mt-5">
                                                 <div>
                                                     <h5>Penjual</h5>
-                                                    <h1 class="font-semibold">Warung Mantap</h1>
+                                                    <h1 class="font-semibold">{{ i.seller }}</h1>
                                                 </div>
 
                                                 <div>
                                                     <h5>Lokasi</h5>
-                                                    <h1 class="font-semibold">Google Maps</h1>
+                                                    <a class="font-semibold underline" :href="i.address"
+                                                        target="_blank">Google Maps</a>
                                                 </div>
 
                                                 <div>
                                                     <h5>Harga</h5>
-                                                    <h1 class="font-semibold">Rp. 10.000</h1>
+                                                    <h1 class="font-semibold">Rp. {{ new
+                                                        Intl.NumberFormat('id-ID').format(i.price) }}</h1>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +260,8 @@ watch(menus, (newValue, oldValue) => {
                                     </div>
                                 </DialogContent>
                             </Dialog>
-                            <p class="text-[15px] font-medium mt-3">Rp. 10.000</p>
+                            <p class="text-[15px] font-medium mt-3">Rp. {{ new
+                                Intl.NumberFormat('id-ID').format(i.price) }}</p>
                             <Button class="mt-4 w-full rounded-xl py-5 font-medium" @click="addToCart(i.id)"
                                 v-if="i.quantity === 0">Tambah</Button>
                             <div class="mt-4 flex items-center content-between w-full" v-else>
@@ -298,15 +290,13 @@ watch(menus, (newValue, oldValue) => {
                                         <DialogHeader>
                                             <DialogTitle>{{ i.name }}</DialogTitle>
                                             <DialogDescription class="line-clamp-1">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eaque ex
-                                                quod
-                                                iusto tempora neque iste repellat atque sit id temporibus architecto
-                                                laboriosam, nam ipsam illum sapiente dolore nulla unde.
+                                                {{ i.description }}
                                             </DialogDescription>
                                         </DialogHeader>
                                         <div class="grid gap-y-2 pb-2">
 
-                                            <p class="text-base font-medium">Rp. 10.000</p>
+                                            <p class="text-base font-medium">Rp. {{ new
+                                                Intl.NumberFormat('id-ID').format(i.price) }}</p>
 
                                             <Label class="text-sm mb-0 font-medium mt-4">Catatan (opsional)</Label>
                                             <Textarea v-model="i.note" class="w-full" placeholder="Masukkan catatan" />
