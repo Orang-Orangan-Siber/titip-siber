@@ -74,8 +74,8 @@ watch(menus, (newValue, oldValue) => {
 </script>
 
 <template>
+    <Navbar />
     <div class="wrapper min-h-screen relative">
-        <Navbar />
         <Dialog>
             <DialogTrigger>
                 <button class="w-[56px] h-[56px] bg-blue-500 shadow-md rounded-full fixed bottom-[32px] right-[32px]"

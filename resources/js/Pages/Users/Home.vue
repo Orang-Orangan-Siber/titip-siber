@@ -8,6 +8,7 @@ import Button from "@/Components/ui/button/Button.vue"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs'
 import Navbar from '@/Components/main/navbar/Navbar.vue';
 import { Link } from '@inertiajs/vue3';
+import Footer from '@/Components/main/footer/Footer.vue';
 
 </script>
 
@@ -18,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
     <section>
         <div class="mt-[30px] grid md:grid-cols-10 grid-cols-1 gap-5 items-start px-5 md:px-0">
             <div class="w-full md:col-span-8 md:col-start-2">
-                <div class="lg:h-[290px] h-[200px] rounded-xl bg-blue-500 w-full"></div>
+                <div class="lg:h-[290px] h-[200px] rounded-xl bg-blue-500 w-full overflow-hidden"></div>
                 <div class="mt-[20px]">
                     <div class="mb-10">
                         <h1 class="font-semibold">Kategori Pilihan</h1>
@@ -58,7 +59,7 @@ import { Link } from '@inertiajs/vue3';
                                     alt="food img" loading="lazy" class="w-full h-[130px] object-cover rounded-t-xl">
                                 <div class="lg:p-4 p-2">
                                     <p class="text-[12px] font-light line-clamp-1">Elaina Store</p>
-                                    <h1 class="font-medium text-slate-700 leading-4 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
+                                    <h1 class="font-medium text-slate-700 leading-5 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
                                     <p class="text-[12px] mt-1 font-light line-clamp-1">Sate, Makanan, Minuman</p>
                                     <p class="lg:text-[15px] text-[13px] font-medium mt-1">Rp. 10.000</p>
                                     
@@ -87,7 +88,7 @@ import { Link } from '@inertiajs/vue3';
                                 alt="food img" loading="lazy" class="w-full h-[130px] object-cover rounded-t-xl">
                             <div class="lg:p-4 p-2">
                                 <p class="text-[12px] font-light line-clamp-1">Elaina Store</p>
-                                <h1 class="font-medium text-slate-700 leading-4 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
+                                <h1 class="font-medium text-slate-700 leading-5 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
                                 <p class="text-[12px] mt-1 font-light line-clamp-1">Sate, Makanan, Minuman</p>
                                 <p class="lg:text-[15px] text-[13px] font-medium mt-1">Rp. 10.000</p>
                                 
@@ -108,19 +109,7 @@ import { Link } from '@inertiajs/vue3';
         </div>
 
 
-        <footer>
-            <div class="w-full bg-blue-50 h-[130px] mt-16">
-        
-                <hr>
-                <div class="flex justify-center px-10 py-6">
-                    <img src="https://i.ibb.co.com/2jsxLq0/New-Project-58-Copy-4-EF890-A-1.png" alt="logo full" width="140px">
-
-                </div>
-                <div class="text-center">
-                    <p class="text-sm text-slate-500">&copy; 2024 Titip Siber. All rights reserved</p>
-                </div>
-            </div>
-        </footer>
+      <Footer/>
 
     </section>
 

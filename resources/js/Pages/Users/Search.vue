@@ -5,6 +5,8 @@ import Navbar from '@/Components/main/navbar/Navbar.vue';
 import StarIcon from '@/Components/icons/Star.vue'
 import { Link } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
+import Footer from '@/Components/main/footer/Footer.vue';
+
 
 
 
@@ -36,7 +38,7 @@ onMounted(() => {
                                 alt="food img" loading="lazy" class="w-full h-[130px] object-cover rounded-t-xl">
                             <div class="lg:p-4 p-2">
                                 <p class="text-[12px] font-light line-clamp-1">Elaina Store</p>
-                                <h1 class="font-medium text-slate-700 leading-4 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
+                                <h1 class="font-medium text-slate-700 leading-5 lg:text-[16px] text-[14px] line-clamp-2 mt-1">Warung kedia pak cik mail keren</h1>
                                 <p class="text-[12px] mt-1 font-light line-clamp-1">Sate, Makanan, Minuman</p>
                                 <p class="lg:text-[15px] text-[13px] font-medium mt-1">Rp. 10.000</p>
                                 
@@ -57,4 +59,5 @@ onMounted(() => {
             </div>
         </div>
     </div>
+
 </template>

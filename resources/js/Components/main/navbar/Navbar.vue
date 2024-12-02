@@ -3,7 +3,7 @@
 import Input from '@/Components/ui/input/Input.vue'
 import SearchPage from '@/Components/main/mobile/SearchPage.vue'
 
-import { Search, User, LogOut, Settings } from 'lucide-vue-next'
+import { Search, User, LogOut, Store } from 'lucide-vue-next'
 
 import {
     DropdownMenu,
@@ -38,7 +38,7 @@ onMounted(() => {
     <nav class="">
         <div class="flex items-center p-3 lg:mx-8 mx-3 justify-between">
             <Link href="/" class="navbar-brand">
-            <img src="https://i.ibb.co.com/Lt02dn4/New-Project-58-81-C0720-2.png" alt="logo full" width="45">
+            <img src="https://i.ibb.co.com/Lt02dn4/New-Project-58-81-C0720-2.png" alt="logo" width="45px">
             </Link>
 
             <div class="mx-5 lg:block hidden">
@@ -82,13 +82,14 @@ onMounted(() => {
                                 <span>Profile</span>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <Settings class="mr-2 h-4 w-4" />
-                                <span>Settings</span>
+                                <Link :href="route('my-merchant')" class="flex items-center w-full">
+                                <Store class="mr-2 h-4 w-4" />
+                                <span>My Merchant</span></Link>
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <Link :href="route('logout')" class="flex items-center">
+                            <Link :href="route('logout')" class="flex items-center w-full">
                             <LogOut class="mr-4 h-4 w-4" />
                             <span>Log out</span></Link>
                         </DropdownMenuItem>
