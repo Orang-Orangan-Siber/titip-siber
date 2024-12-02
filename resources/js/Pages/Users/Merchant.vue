@@ -76,7 +76,6 @@ watch(menus, (newValue, oldValue) => {
 <template>
     <div class="wrapper min-h-screen relative">
         <Navbar />
-
         <Dialog>
             <DialogTrigger>
                 <button class="w-[56px] h-[56px] bg-blue-500 shadow-md rounded-full fixed bottom-[32px] right-[32px]"
@@ -174,7 +173,6 @@ watch(menus, (newValue, oldValue) => {
                 <Button class="w-full rounded-xl py-5 font-medium mt-4" @click="submit">Checkout</Button>
             </DialogContent>
         </Dialog>
-
 
 
         <div class="grid grid-cols-10 mb-5">

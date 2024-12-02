@@ -26,6 +26,8 @@ const showSearchMobile = () => {
     showSearch.value = true
 }
 
+console.log(route('logout'))
+
 </script>
 
 <template>
@@ -82,7 +84,7 @@ const showSearchMobile = () => {
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <Link href="auth/logout" class="flex items-center">
+                            <Link :href="route('logout')" class="flex items-center">
                             <LogOut class="mr-4 h-4 w-4" />
                             <span>Log out</span></Link>
                         </DropdownMenuItem>
