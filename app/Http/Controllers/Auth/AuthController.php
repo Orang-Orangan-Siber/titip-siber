@@ -23,12 +23,24 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials)) {
+        $remember = $request->remember_me;
+
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
             return redirect()->intended('/');
         } else {
-            return back()->withErrors(['LoginError' => "The provided credentials do not match our records."]);
+            return back()->withErrors(['LoginError' => "Anda bukan warga siber"]);
         }
+    }
+
+    public function logout(Request $request) {
+        $request->session()->regenerateToken();
+        $request->session()->invalidate();
+
+        Auth::logout();
+
+        return redirect('/auth/login');
+
     }
 }
