@@ -10,33 +10,37 @@ use Illuminate\Support\Facades\Auth;
 
 class MerchantController extends Controller
 {
-    public function merchant($slug) {
+    public function merchant($slug)
+    {
         $merchant = Merchant::where('slug', $slug)->with('user')->first();
 
-        if($merchant == null){
+        if ($merchant == null) {
             abort(404);
         }
 
         return Inertia::render('Users/Merchant/Merchant', ['merchant' => $merchant, 'items' => $merchant->items]);
     }
-    
-    public function getMyMerchant() {
-        $merchant = Merchant::where('user_id', Auth::user()->id)->first(); 
+
+    public function getMyMerchant()
+    {
+        $merchant = Merchant::where('user_id', Auth::user()->id)->first();
         return Inertia::render('Users/Merchant/MyMerchant', ['merchant' => $merchant]);
     }
 
-    public function registerView() {
+    public function registerView()
+    {
 
         $isAvailable = Merchant::where('user_id', Auth::user()->id)->count();
 
-        if($isAvailable){
+        if ($isAvailable) {
             abort(404);
         }
 
         return Inertia::render('Users/Merchant/Register');
     }
 
-    public function registerPost(Request $request) {
+    public function registerPost(Request $request)
+    {
 
         $merchant = new Merchant();
         $merchant->user_id = Auth::user()->id;
@@ -48,8 +52,13 @@ class MerchantController extends Controller
 
         return redirect('/my-merchant');
     }
-    
-    public function newItem(Request $request) {
 
+    public function newItem(Request $request) {}
+
+    public function checkout(Request $request, $slug)
+    {
+        $merchant = Merchant::where('slug', $slug)->with('user')->first();
+
+        
     }
 }

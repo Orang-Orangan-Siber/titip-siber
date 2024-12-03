@@ -23,15 +23,26 @@ import {
 import Textarea from '@/Components/ui/textarea/Textarea.vue';
 import Label from '@/Components/ui/label/Label.vue';
 import { ShoppingBag } from 'lucide-vue-next';
-import { usePage } from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
 
 const page = usePage()
 
-const menus = reactive([])
+const showCard = ref(false)
+const itemTotal = ref(0)
 
+const addToCart = (id, operation = "+") => {
+    const menu = form.cart.find((menu) => menu.id === id)
+    menu.quantity += operation === "+" ? 1 : -1
+}
+
+const form = useForm({
+    cart: [],
+    items : [],
+    merchant: page.props.merchant
+})
 
 page.props.merchant.items.forEach((menu) => {
-    menus.push({
+    form.cart.push({
         id: menu.id,
         name: menu.name,
         price: menu.price,
@@ -39,19 +50,18 @@ page.props.merchant.items.forEach((menu) => {
         image: menu.image,
         seller: menu.seller,
         address: menu.address,
+        note: '',
         quantity: 0,
     })
 })
 
-const showCard = ref(false)
-const itemTotal = ref(0)
+const submit = () => {
+    form.items = form.cart.filter((menu) => menu.quantity > 0)
 
-const addToCart = (id, operation = "+") => {
-    const menu = menus.find((menu) => menu.id === id)
-    menu.quantity += operation === "+" ? 1 : -1
+    form.post(route("checkout"))
 }
 
-watch(menus, (newValue, oldValue) => {
+watch(form.cart, (newValue, oldValue) => {
     itemTotal.value = 0
 
     newValue.forEach((menu) => {
@@ -65,7 +75,6 @@ watch(menus, (newValue, oldValue) => {
     }
 })
 
-console.log(page.props.merchant)
 
 </script>
 
@@ -93,7 +102,7 @@ console.log(page.props.merchant)
                 </DialogHeader>
 
                 <div class="grid gap-y-3">
-                    <div class="grid grid-cols-4 items-center" v-for="i in menus.filter((menu) => menu.quantity > 0)">
+                    <div class="grid grid-cols-4 items-center" v-for="i in form.cart.filter((menu) => menu.quantity > 0)">
                         <div class="col-span-2">
                             <h4 class="font-semibold mb-3 line-clamp-2">{{ i.name }}</h4>
                             <Dialog>
@@ -160,10 +169,10 @@ console.log(page.props.merchant)
 
                 <div class="flex items-center justify-between">
                     <p class="font-semibold">Total</p>
-                    <p class="font-semibold">Rp. 10.000</p>
+                    <p class="font-semibold">Rp. {{ new Intl.NumberFormat('id-ID').format(form.cart.reduce((acc, item) => acc + (item.price * item.quantity), 0)) }}</p>
                 </div>
 
-                <Button class="w-full rounded-xl py-5 font-medium mt-4" @click="submit">Checkout</Button>
+                <Button class="w-full rounded-xl py-5 font-medium mt-4" @click="submit" :disabled="form.cart.reduce((a, b) => a + b.quantity, 0) < 1">Checkout</Button>
             </DialogContent>
         </Dialog>
 
@@ -207,8 +216,8 @@ console.log(page.props.merchant)
                 <hr class="my-4">
 
                 <div class="grid lg:grid-cols-4 grid-cols-1 gap-x-3 gap-y-6">
-                    <div class="border p-3 rounded-2xl transition-[250ms]" v-for="i in menus">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv0mHMCDmrOcWd_m2Ifi9V0_CoPjvt5bx4jA&s"
+                    <div class="border p-3 rounded-2xl transition-[250ms]" v-for="i in form.cart">
+                        <img :src="i.image"
                             alt="food img" loading="lazy" class="w-full h-[228px] object-cover rounded-xl">
                         <div class="mt-1 p-2">
                             <h1 class="font-semibold text-base leading-5 line-clamp-2 mt-2">{{ i.name }}</h1>
